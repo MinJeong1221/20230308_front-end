@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTMl Table(표)</title>
+
+    <style>
+      table {
+        text-align: center;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+      }
+      thead,
+      tfoot {
+        background-color: silver;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      <table> : 테이블의 시작과 끝을 명시
+      <caption> : 표의 제목
+
+      <tr> : Table Row의 줄임말 => 행(가로)을 만든다
+      <th> : Table header의 줄임말 => 데이터의 이름을 나타낸다
+      <td> : Table Data의 줄임말 => 각 행 즉, 실제 값에 해당
+
+      표의 구조를 지정하는 <thaed>(제목), <tbody>(본문), <tfoot>(요약)
+
+      속성
+        rowspan="" 행을 합칠때 사용
+        colspan="" 열을 합칠때 사용        
+     -->
+    <h1>HTML 표 다루기</h1>
+
+    <table>
+      <caption>
+        성적표
+      </caption>
+      <tr>
+        <th>반</th>
+        <th>이름</th>
+        <th>성적표</th>
+      </tr>
+      <tr>
+        <td>프론트엔드 양성반</td>
+        <td>조민정</td>
+        <td>A+</td>
+      </tr>
+      <tr>
+        <td>벡엔드 양성반</td>
+        <td>조민정</td>
+        <td>A+</td>
+      </tr>
+    </table>
+
+    <h3>상품구성</h3>
+
+    <table>
+      <caption>
+        선물용과 가정용 상품구성
+      </caption>
+      <!-- 
+        <colgroup>, <col /> : n번째 열에 스타일을 지정할 때 사용한다
+       -->
+      <colgroup>
+        <col style="background-color: rebeccapurple" />
+        <col />
+        <col style="width: 100px" />
+        <col style="width: 200px" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">선물용</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>35,000원</td>
+        </tr>
+        <tr>
+          <td>5kg</td>
+          <td>18~26과</td>
+          <td>52,000원</td>
+        </tr>
+        <tr>
+          <td rowspan="2">가정용</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>30,000원</td>
+        </tr>
+        <tr>
+          <td>5kg</td>
+          <td>18~26과</td>
+          <td>47,000원</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td colspan="4">표의 요약</td>
+      </tfoot>
+    </table>
+
+    <table>
+      <caption>
+        요안도라 객실
+      </caption>
+      <thead>
+        <tr>
+          <th>방 이름</th>
+          <th>대상</th>
+          <th>크기</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>유체방</td>
+          <td>여성 도미토리</td>
+          <td rowspan="3">4인실</td>
+          <td rowspan="4">1인 20,000원</td>
+        </tr>
+        <tr>
+          <td rowspan="2">동백방</td>
+          <td>동성 도미토리</td>
+        </tr>
+        <tr>
+          <td>가족 1팀</td>
+        </tr>
+        <tr>
+          <td>천혜향방</td>
+          <td>-</td>
+          <td>2인실</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td colspan="4">바깥채 전체를 렌트합니다</td>
+      </tfoot>
+    </table>
+  </body>
+</html>
