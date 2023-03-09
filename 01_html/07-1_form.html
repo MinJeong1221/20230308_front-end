@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프론트엔드 개발자 지원서</title>
+    <style>
+      div {
+        border: 1px solid black;
+        width: 500px;
+        padding: 10px 20px 10px;
+      }
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>프론트엔드 개발자 지원서</h1>
+      <p>
+        HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을
+        찾습니다.
+      </p>
+      <hr />
+      <form id="user">
+        <h3>개인 정보</h3>
+        <ul>
+          <li>
+            <label for="userName">이름</label>
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              placeholder="공백 없이 입력하세요"
+            />
+          </li>
+          <li>
+            <label for="phoneNum">연락처</label>
+            <input type="text" name="phoneNum" id="phoneNum" />
+          </li>
+        </ul>
+
+        <h3>지원 분야</h3>
+
+        <ul>
+          <li>
+            <input type="radio" name="supportAreas" id="publishing" />
+            <label for="publishing">웹 퍼블리싱</label>
+          </li>
+          <li>
+            <input type="radio" name="supportAreas" id="developer" />
+            <label for="developer">웹 애플리케이션 개발</label>
+          </li>
+
+          <li>
+            <input type="radio" name="supportAreas" id="devOps" />
+            <label for="devOps">개발 환경 개선</label>
+          </li>
+        </ul>
+
+        <h3>지원 동기</h3>
+        <textarea
+          name="motive"
+          id=""
+          cols="60"
+          rows="5"
+          placeholder="본사 지원 동기를 간략하게 써 주세요"
+        ></textarea>
+      </form>
+      <button form="user">접수하기</button>
+      <button type="reset" form="user">다시쓰기</button>
+    </div>
+  </body>
+</html>
