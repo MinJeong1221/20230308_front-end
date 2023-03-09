@@ -5,6 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS 선택자t</title>
+    <style>
+      /* 
+      CSS 우선순위
+        1. !important 10000점 
+        2. 인라인 방식 1000점
+        3. id 100점
+        4. class 10점
+        5. 타입 선택자 1점
+        6. 전체 선택자 0점
+      */
+      * {
+        margin: 0;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>전체 선택자</h1>
+    <p>
+      전체 선택자는 *을 사용한다<br />
+      HTML문서내 모든 요소를 선택한다. <br />
+      우선순위 점수가 0점이다
+    </p>
+  </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 선택자</title>
+    <style>
+      .bold {
+        font-weight: 700;
+      }
+      .red {
+        color: blue;
+        color: red;
+      }
+      p {
+        color: green !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>클래스 선택자 (.)</h1>
+    <p class="bold">특정 class 속성값을 가진 요소들을 선택한다.</p>
+    <p>클래스는 class속성을 통해서 지정할수 있다.</p>
+    <p class="bold">
+      클래스 선택자는 <span class="red">".클래스명"</span> 의 형태로 작성한다
+    </p>
+    <p class="bold red" style="font-weight: 400">
+      1. 같은 클래스명을 여러 요소들이 가질 수 있다. <br />
+      2. 하나의 요소가 여러 클래스 명을 가질수 있다.(띄어쓰기로 구분한다) <br />
+      3. 클래스의 우선순위 점수는 10점이다.
+    </p>
+  </body>
+</html>
