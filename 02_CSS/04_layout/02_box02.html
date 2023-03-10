@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 여백과 테두리</title>
+    <style>
+      body{
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+
+        border: 3px solid black; /* border 단축속성 */
+        border-radius: 10%;
+        border-top-right-radius: 0;
+
+        margin: 10px;
+        margin: 10px 20px;
+        margin: 10px 20px 30px;
+        margin: 10px 20px 30px 40px;
+
+        padding: 10px;
+        padding: 10px 20px;
+        padding: 10px 20px 30px;
+        padding: 10px 20px 30px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS 여백과 테두리</h1>
+    <p>Box 모양으로 
+      margin(바깥 여백), border(테두리), pading(안쪽 여백), content(컨텐츠 영역)
+      이렇게 있다.
+    </p>
+    <hr>
+
+    <h2>1. border(테두리)</h2>
+    <p>border은 박스의 테두리의 두께,  모양,  색상 지정할 수 있다.(단축속성)
+      <br>border를 지정하면 요소의 너비에 영향을 미친다.
+    </p>
+    <h3>1-1 border 개별속성</h3>
+    <ul>
+      <li>border-width : 선의 두께</li>
+      <li>border-style : 선의 모양</li>
+      <li>border-color : 선의 색상</li>
+      <li>border-right : 오른쪽</li>
+      <li>border-left :  왼쪽</li>
+      <li>border-radius : 모서리를 둥글게 처리<br>
+        -- border-top-right-radius : 각 모서리 별로 처리도 가능</li>
+
+    </ul>
+
+    <hr>
+
+    <h2>2. 바깥 여백 margin</h2>
+    <p>요소의 바깥 여백을 지정한다(시계방향)</p>
+    <p>margin이 겹치는 부분이 합쳐지는 경우가 있다(마진상쇄)</p>
+    <p>margin을 지정해도 너비에 영향을 미치지 않는다</p>
+    <p>너비가 지정되어있고 좌우너비를 auto로 두면 가운데로 보낼수 있다. (margin: 0 auto;)</p>
+    
+    <h3>2-1. margin 단축속성</h3>
+    <p>margin : 10px(상하좌우 다 적용)된다.</p>
+    <p>margin : 10px 20px(상하 좌우)이렇게 적용된다.</p>
+    <p>margin : 10px 20px 30px(상 좌우 하)이렇게 적용된다.</p>
+    <p>margin : 10px 20px 30px 40px(상 우 하 좌)이렇게 적용된다.</p>
+
+    <h3>2-2. margin 개별속성</h3>
+    <p>margin-top, margin-right, margin-left, margin-bottom ...등</p>
+
+    <hr>
+
+    <h2>3. 안쪽 여백 paddig</h2>
+    <p>요소의 안쪽 여백을 지정한다(시계방향)</p>
+    <p>padding을 지정하면 너비에 영향을 미친다</p>
+
+    <h3>3-1. padding 단축속성</h3>
+    <p>paddig : 10px(상하좌우 다 적용)된다.</p>
+    <p>paddig : 10px 20px(상하 좌우)이렇게 적용된다.</p>
+    <p>paddig : 10px 20px 30px(상 좌우 하)이렇게 적용된다.</p>
+    <p>paddig : 10px 20px 30px 40px(상 우 하 좌)이렇게 적용된다.</p>
+
+    <h3>3-2. padding 개별속성</h3>
+    <p>padding-top, padding-right, padding-left, padding-bottom ...등</p>
+
+    <hr>
+
+    <h2>4. box-sizing</h2>
+    <p>요소의 너비와 높이계산 방법을 지원한다</p>
+    <h3>4-1. box-sizing : content-box(기본속성)</h3>
+    <p>너비와 높이가 content영역이 기준이다</p>
+    <h3>4-2. box-sizing : border-box</h3>
+    <p>너비와 높이가 border까지의 영역이 기준이 된다</p>
+
+    <hr>
+
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+  </body>
+</html>
