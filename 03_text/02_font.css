@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "NotoSansKR";
+  src: local("NotoSansKR"), url(./fonts/NotoSansKR-Thin.otf) format("oppentype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "NotoSansKR";
+  src: local("NotoSansKR"),
+    url(./fonts/NotoSansKR-Regular.otf) format("oppentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "NotoSansKR";
+  src: local("NotoSansKR"), url(./fonts/NotoSansKR-Bold.otf) format("oppentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "NotoSansKR";
+  src: local("NotoSansKR"),
+    url(./fonts/NotoSansKR-Black.otf) format("oppentype");
+  font-weight: 900;
+}

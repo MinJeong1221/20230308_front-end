@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Text</title>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+      }
+      div {
+        box-sizing: border-box;
+        border: 1px solid black;
+        padding: 20px;
+        margin: 20px;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+      .italic {
+        font-style: italic;
+      }
+      .weight {
+        font-weight: 700;
+      }
+      .color {
+        color: red;
+        color: rgb(51, 51, 247);
+        color: rgba(21, 255, 0, 0.582);
+      }
+      .align {
+        width: 50%;
+        background-color: aquamarine;
+        text-align: center;
+        line-height: ;
+      }
+      .lineHeight {
+        height: 100px;
+        background-color: blueviolet;
+        line-height: 100px;
+      }
+      .lineHeight2 {
+        line-height: 1.4px;
+      }
+      .decoration {
+        /* text-decoration의 단축속성 */
+        text-decoration: line-through 2px dashed red;
+      }
+      .shadow {
+        text-shadow: 4px 4px 4px rgb(0, 0, 0, 0.4);
+      }
+      .textTransform {
+        text-transform: uppercase;
+      }
+      .spacing {
+        letter-spacing: -0.3em;
+        word-spacing: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>CSS Text 관련 속성</h1>
+      <p>글씨 관련 속성은 대부분 상속(Cascading)이 된다</p>
+
+      <div>
+        <h2>01. font-family</h2>
+        <p>
+          <b>글씨체</b>를 지원한다 <br />
+          여러개를 지정할수 있는데 없으면 순서에 따라 다른 폰트를 적용한다
+          <br />
+          font 이름에 띄어쓰기가 있다면 "" 사이에 작성한다.
+        </p>
+      </div>
+      <div>
+        <h2>02. font-size</h2>
+        <p>
+          <b>글씨의 크기</b>를 지정한다 <br />
+          <b>단위</b>는<br />
+          px, cm, 키워드(예약어)같은 절대 크기 <br />
+          rem(기본 브라우저가 가지고 있는 크기가 기준 - ":root{}"를 사용하여
+          크기를 변경가능하다), em(부모크기의 배수), %와 같은 상대 크기로 지정이
+          가능하다.
+        </p>
+      </div>
+      <div>
+        <h2>03. font-style</h2>
+        <p>
+          <b class="italic">글씨의 스타일</b>을 변경한다 <br />
+          CSS를 통해서 말고 HTML i태그를 사용할수도 있다.
+        </p>
+      </div>
+      <div>
+        <h2>04. font-weight</h2>
+        <p>
+          <b class="weight">글씨의 굵기</b>를 지정한다 <br />
+          normal, bold등 키워드나 100 ~ 900 사이 100의 단위로 굵기를 지정한다.
+          <br />
+          대부분 400(normal) 700(bold)을 사용한다. <br />
+          해당 굵기의 폰트를 가지고 있어야 동작한다.
+        </p>
+      </div>
+      <div>
+        <h2>05. color</h2>
+        <p>
+          <b class="color">글씨의 색상</b>을 지정한다 <br />
+          키워트 또는 색상코드(HEX(16진수(#000000(검은색)~#ffffff(흰색))),
+          <br />
+          rgb(red(0 ~ 225), green(0 ~ 225), blue(0 ~ 225)),
+          <br />
+          rgba(red(0 ~ 225), green(0 ~ 225), blue(0 ~ 225), 투명도(0 ~ 1 사이의
+          숫자)) ..등)를 입력한다.
+        </p>
+      </div>
+      <div>
+        <h2>06. text-align</h2>
+        <p class="align">
+          글자의 정렬을 지정한다 <br />
+          center(가운데 정렬), right(오른쪽 정렬), left(왼쪽 정렬), justify(양쪽
+          정렬)등 키워드를 사용한다. <br />
+          인라인 요소가 아니라 글씨를 감싸고 있는 블럭요소에 사용해야된다.
+        </p>
+      </div>
+      <div>
+        <h2>07. line-height</h2>
+        <p class="lineHeight">줄의 높이를 지정한다 <br /></p>
+        <p class="lineHeight2">대부분 배율로 지정한다.(대부분 1.4, 1.6 지정)</p>
+        <!-- 
+          <p>
+          tip! 글자가 한줄일 경우 블록의 높이(height)와 line-height를 똑같이
+          사용하면 세로로 가운데 정렬이 가능하다
+        </p>
+      --></div>
+      <div>
+        <h2>08. text-decoration(단축속성과 개별속성을 사용할 수 있다)</h2>
+        <p class="decoration">글씨에 줄을 긋는다.<br /></p>
+        <p>
+          위치 = line-through(중간줄), underline(아랫줄)
+          <br />
+          줄의 모양 = dashed(--), solid(실선), dotted(....)
+          <br />
+          색상과 굵기도 지정가능하다
+        </p>
+      </div>
+      <div>
+        <h2>09. text-shadow</h2>
+        <p class="shadow">글씨에 그림자 효과를 준다<br /></p>
+        <p>text-shadow : x축 y축 번짐정도 색상 지정가능하다</p>
+      </div>
+      <div>
+        <h2>10. text-transform</h2>
+        <p>
+          글씨의 대소문자 변경 uppercase(전부 대문자로 변경) lowercase(전부
+          소문자로 변경) capitalize(앞글자만 대문자로 변경)<br />
+        </p>
+        <p class="textTransform">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
+          aliquid distinctio odit velit neque quasi, magni in quo explicabo
+          voluptatum earum laudantium ad cupiditate, a ex consequatur sed
+          blanditiis laboriosam!
+        </p>
+      </div>
+      <div>
+        <h2>11. letter-spacing(글자간의 간격)과 word-spacing(단어간의 간격)</h2>
+        <p>글씨의 글자, 단어의 간격을 조절한다<br /></p>
+        <p class="spacing">값의 음수는 간격이 짧아지고 양수는 넓어진다</p>
+      </div>
+    </div>
+  </body>
+</html>
