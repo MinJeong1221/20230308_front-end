@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./05_selector.css">
+  <title>CSS 고급 선택자</title>
+</head>
+<body>
+  <h1>CSS 고급 선택자</h1>
+  
+  <h2 class="import">1. 하위 요소(후손) 선택자(" " => 띄어쓰기)</h2>
+  <p>특정 요소의 하위 요소(후손)를 선택한다</p>  
+
+  <ul class="gnb-list1">
+    <li>
+      <a href="">
+        HTML
+      </a>
+      <ul>
+        <li>
+          html 문법
+        </li>
+      </ul>
+    </li>
+    <li><a href="">CSS</a></li>
+    <li><a href="">JS</a></li>
+  </ul>
+
+  <h2 class="import">2. 자식 요소 선택자(">")</h2>
+  <p>후손이 아닌 바로 밑에 자식요소만들 선택한다.</p>
+
+  <ul class="gnb-list2">
+    <li>
+      <a href="">
+        HTML
+      </a>
+      <ul>
+        <li>
+          html 문법
+        </li>
+      </ul>
+    </li>
+    <li><a href="">CSS</a></li>
+    <li><a href="">JS</a></li>
+  </ul> 
+
+  <h2 class="import">3. 인접 형제 선택자("+")</h2>
+  <p> 바로 아래 있는 형제(하나)를 선택한다</p>
+
+  <ul class="gnb-list3">
+    <li class="target1">
+      <a href="">
+        HTML
+      </a>
+      <ul>
+        <li>
+          html 문법
+        </li>
+      </ul>
+    </li>
+    <li><a href="">CSS</a></li>
+    <li><a href="">JS</a></li>
+  </ul>
+
+  <h2>4. 형제 선택자("~")</h2>
+  <p>아래오는 모든 형제 요소에 적용된다.</p>
+
+  <ul class="gnb-list3">
+    <li class="target2">
+      <a href="">
+        HTML
+      </a>
+      <ul>
+        <li>
+          html 문법
+        </li>
+      </ul>
+    </li>
+    <li><a href="">CSS</a></li>
+    <li><a href="">JS</a></li>
+  </ul>
+
+  <h2>5. 속성 선택자("[속성이름] or [속성이름=속성값]" => []안에 속성으로 선택한다.)</h2>
+  <p>선택자 안에 속성이름이 존재하면 적용이 된다.</p>
+  <form action="">
+    <ul>
+      <li>
+        <label for="name">이름</label>
+        <input type="text" id="name">
+      </li>
+      <li>
+        <label for="email">이메일</label>
+        <input type="email" id="email">
+      </li>
+    </ul>
+  </form>
+
+  <h2>가상 클래스 선택자(" :가상 클래스 이름 ")</h2>
+  <p>사용자가 특정 행동을 했을때 가상 클래스가 붙는 것처럼 동작한다.</p>
+  <ul>
+    <li class="hover">
+      <a href="">
+      :hover => 마우스가 올라가면 바뀐다.
+      </a>
+    </li>
+    <li class="active">
+      <a href="">
+        :active => 마우스가 클릭하고 있는 동안 바뀐다.
+      </a>
+    </li>
+    <li class="focus">
+      <a href="">
+        :focus => 클릭이 가능한 요소들이 focus가 되어 있는 동안 바뀐다.
+      </a>
+    </li>
+  </ul>
+
+  <ul class="child">
+    <li>:first-child => 첫번째 자식</li>
+    <li>:nth-child(n) => n번째 자식</li>
+    <li>자식</li>
+    <li>n번째 자식</li>
+    <li>:last-child => 마지막 자식</li>
+  </ul>
+
+  <h2>가상요소 선택자 (::가상요소이름)</h2>
+  <p>문서안에 특정부분에 스타일을 지정</p>
+  <p>::before와 ::after 두개가 가장 많이 사용된다.
+    <br> content 속성이 필수로 들어가야 된다!
+  </p>
+  <ul class="fruits">
+    <li>사과</li>
+    <li>바나나</li>
+    <li>수박</li>
+  </ul>
+</body>
+</html>

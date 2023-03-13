@@ -1,0 +1,80 @@
+.import {
+  color: red;
+}
+/* 하위(후손)요소 선택자(" " => 띄어쓰기) */
+.gnb-list1 li{
+  color: red;
+}
+.gnb-list1 li a{
+  color: violet;
+}
+/* 자식요소 선택자(">") */
+.gnb-list2 > li {
+  color: blue;
+}
+.gnb-list2 > li > a{
+  color: green;
+  font-weight: 700;
+}
+/* 인접형제요소 선택자("+") */
+.target1 + li > a { 
+  color: gold;
+}
+/* 형제요소 선택자 ("~") */
+.target2 ~ li > a { 
+  color: sienna;
+}
+/* 속성선택자 ("[속성이름] or [속성이름=속성값]") */
+input[type="email"] {
+  border-color: blue;
+}
+/* 가상 클래스 선택자 (" : 가상클래스 이름 ") */
+.hover :hover {
+  background-color: gold;
+}
+.active :active {
+  background-color: rgb(38, 0, 255);
+}
+.focus :focus {
+  background-color: brown;
+}
+
+.child :first-child {
+  background-color: bisque;
+}
+.child :nth-child(2n) {
+  background-color: pink;
+}
+.child :last-child {
+  background-color: blueviolet;
+}
+
+/* 가상요소 선택자 */
+.fruits li{
+  list-style: none;
+  padding-left: 0;
+}
+.fruits li::before{
+  content: "";
+  display: inline-block;
+  text-align: center;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  color: white;
+
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.fruits li::after{
+  content: "new";
+  display: inline-block;
+  text-align: center;
+  padding: 0 5px;
+  background-color: red;
+  color: white;
+
+  border-radius: 2px;
+  margin-left: 10px;
+  font-size: 0.8em;
+}
