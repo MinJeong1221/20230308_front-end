@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Position</title>
+  <style>
+    .container {
+      width: 500px;
+      height: 300px;
+      background-color: #292929;
+      border: 3px solid black;
+
+      position: relative;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 100px;
+      background-color: rgb(250, 84, 84);
+      border: 3px solid red;
+
+      position: absolute;
+      top: 50px;
+      right: 100px;
+
+      z-index: 10;
+    }
+    .box2 {
+      width: 100px;
+      height: 100px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 100px;
+      background-color: rgb(84, 250, 148);
+      border: 3px solid rgb(0, 255, 106);
+
+      position: absolute;
+      top: 70px;
+      right: 100px;
+    }
+    .fixed {
+      width: 100px;
+      height: 100px;
+      border: 3px solid blueviolet;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS position</h1>
+
+  <h2>1. position</h2>
+  <p>요소의 배치 방법을 지정한다.</p>
+  <h3>1-1. 속성값</h3>
+  <ul>
+    <li><b>static(기본 값)</b> : 문서의 흐름(기본: 위에서 아래)에 맟춰 나열된다. 위치값 기준이 지정이 안된다.</li>
+    <li>
+      <b>relative</b> : 기본적으로 static처럼 문서의 흐름에 맞춰 나열된다. <br>
+      위치값 기준이 문서 흐름상 자신의 원래 위치가 된다.
+    </li>
+    <li>
+      <b>absolute</b> : 위치값 기준이 자신의 상위요소 기준으로 움직인다. <br>
+      상위 요소들 position 값이 static 아닌 요소가 기준이 된다(relative, absolute, fixed). <br>
+      inline-block과 비슷하게 움직인다. <br>
+      float처럼 다른 요소의 위나 아래에 위치한다. <br>
+      더 늦게 작성된 요소가 위로 위로 올라온다.
+    </li>
+    <li><b>fixed</b> : 위치값의 기준이 보이는 화면(뷰 포트) 영역이 기준이다.</li>
+  </ul>
+  <h2> 2. top, bootom, left, right => offset</h2>
+  <p>position값에 따른 기준이 되는 요소로부터 상하좌우 얼마나 떨어져있는지 지정한다.</p>
+
+  <h2>3. z-index</h2>
+  <p>
+    요소들이 겹칠때 더 위에 보여줄 요소를 지정할수 있다. <br>
+    z-index 값이 높으면 위로 올라온다.
+  </p>
+
+  <div class="container">
+    <div class="box">Box</div>
+    <div class="box2">Box</div>
+    
+    <div class="fixed">fixed</div>
+  </div>
+</body>
+</html>
