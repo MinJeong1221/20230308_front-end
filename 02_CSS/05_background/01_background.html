@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 배경 지정하기</title>
+
+  <style>
+    body {
+      height: 4000px;
+    }
+    .container {
+      width: 500px;
+      height: 300px;
+      padding: 20px;
+      border: 3px solid black;
+
+      background-color: blanchedalmond;
+      background-clip: border-box;
+      background-image: url(../assets/dog1.jfif);
+      background-repeat: no-repeat;
+      background-position: 100px 50px;
+      background-size: auto 300px;
+
+      background-origin: content-box;
+
+      background-attachment: local;
+
+      /* 부모요소를 벗어나는 자식 요소를 처리하는 방법을 지정한다. */
+      overflow: scroll;
+    }
+    .gradient1 {
+      width: 500px;
+      height: 300px;
+      border: 3px solid black;
+
+      background: linear-gradient(to bottom, blue, white);
+      background: linear-gradient(to right bottom, blue, white);
+      background: linear-gradient(60deg, blue, white);
+      
+    }
+    .gradient2 {
+      width: 500px;
+      height: 300px;
+      border: 3px solid black;
+
+      /* 끝나는 지점을 정할수도 있다 */
+      background: linear-gradient(to bottom, blue, skyblue 50%, white);
+      
+    }
+    .gradient3 {
+      width: 500px;
+      height: 300px;
+      border: 3px solid black;
+
+      background: radial-gradient(circle, #fff, #000, red)
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS background</h1>
+
+  <h2>1. background-color</h2>
+  <p>
+    배경색을 지정한다. <br>
+    속성에 키워드 rgb rgba 16진수 등 넣는다.
+  </p>
+
+  <h2>2. background-clip</h2>  
+  <p>
+    배경이 지정되는 범위를 설정한다. <br>
+    적용되는 범위이다.(시작되는 범위가 아님)
+    <ul>
+      <h4>속성값</h4>
+      <li>
+        border-box(기본값) : border 영역까지 지정
+      </li>
+      <li>
+        padding-box : padding 영역까지 지정
+      </li>
+      <li>
+        content-box : content 영역까지 지정
+      </li>
+    </ul>
+  </p>
+
+  <h2>3. background-image</h2>
+  <p>
+    이미지를 배경으로 지정한다.
+    url("이미지 파일 경로") 형식으로 사용한다.
+  </p>
+
+  <h2>4. background-repeat</h2>
+  <p>
+    배경 이미지의 반복 방법을 지정한다.
+    <ul>
+      <h4>속성값</h4>
+      <li>
+        repeat(기본값) : x축, y축 방향으로 둘다 반복한다.
+      </li>
+      <li>
+        no-repeat : 반복을 하지 않는다.
+      </li>
+      <li>
+        repeat-x : x축으로 방향으로 반복한다.
+      </li>
+      <li>
+        repeat-y : y축으로 방향으로 반복한다.
+      </li>
+    </ul>
+  </p>
+
+  <h2>5. background-position</h2>
+  <p>배경 이미지의 위치를 지정한다.</p>
+  <ul>
+    <h4>속성값</h4>
+    <li>
+      x축, y축(숫자로 값을 입력해주면 된다. 음수도 사용가능하다.) 방향으로 지정한다.
+    </li>
+    <li>한가지 값만 사용시 나머지는 자동으로 center로 지정된다.</li>
+    <li>키워드(left,right,top,bootom), % 사용가능</li>
+  </ul>
+
+  <h2>6. background-size</h2>
+  <p>배경이미지의 사이즈를 지정한다.</p>
+  <ul>
+    <h4>속성값</h4>
+    <li>가로(x), 세로(y) 값 지정가능하다</li>
+    <li>값을 하나만 지정하면 가로값이 지정되서 세로는 자동으로 이미지 비율에 맞춰서 지정된다.</li>
+    <li>auto : 원본 이미지 크기만큼 지정한다.</li>
+    <li>contain : 가로 세로 중 더 긴 쪽을 기준으로 사이즈를 맟춘다(이미지가 잘리지 않은 범위에서).</li>
+    <li>cover : 가로 세로 중 더 짧은 쪽을 기준으로 사이즈를 맞춘다(이미자를 자르면서 꽉 채운다).</li>
+  </ul>
+
+  <h2>7. background-origin</h2>
+  <p>배경 이미지가 시작되는 범위를 지정한다.</p>
+  <ul>
+    <h4>속성값</h4>
+    <li>
+      content-box(기본값) : content 영역부터 지정
+    </li>
+    <li>
+      border-box : border 영역부터 지정
+    </li>
+    <li>
+      padding-box : padding 영역부터 지정
+    </li>
+  </ul>
+
+  <h2>7. background-attachment</h2>
+  <p>배경 이미지가 시작되는 범위를 지정한다.</p>
+  <ul>
+    <h4>속성값</h4>
+    <li>
+      scroll(기본값) : 화면을 스크롤하면 배경이미지도 고정이 되어 스크롤 됩니다.
+    </li>
+    <li>
+      local : 스크롤을 하면 배경이미지가 함께 움직인다.
+    </li>
+    <li>
+      fixed : 뷰포트기준으로 위치가 고정이 된다. 배경이미지로 지정된 요소를 통해서만 보인다.
+    </li>
+  </ul>  
+
+  <h2>8. background</h2>
+  <p>배경관련 속성을 한번에 지정하는 단축속성이다. 
+    <br>position과 size는 /로 구분하여 작성(position이 먼저 작성이 된다.)
+    <br>단축속성으로 size를 작성하고 싶으면 꼭 position값을 지정해야 된다.
+  </p>
+
+
+  <div class="container">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolore repellendus nemo necessitatibus dolores hic consequatur corrupti eius excepturi recusandae commodi, tempora veniam enim tempore deleniti unde eligendi, quas debitis.
+    </p>
+  </div>
+
+  <h2>배경색 그라데이션 적용</h2>
+  <p>background-gradation을 구글에 검색하여 사용방법 검색</p>
+  <div class="gradient1"></div>
+  <div class="gradient2"></div>
+  <div class="gradient3"></div>
+</body>
+</html>
