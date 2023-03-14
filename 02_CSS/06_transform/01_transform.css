@@ -1,0 +1,48 @@
+.box {
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  text-align: center;
+  line-height: 100px;
+}
+.box + .box {
+  margin-top: 50px;
+}
+.translate .box.x:hover {
+  transform: translateX(30px);
+}
+.translate .box.y:hover {
+  transform: translateY(30px);
+}
+.translate .box.xy:hover {
+  transform: translate(30px, 20px);
+}
+.scale .box.x:hover {
+  transform: scaleX(2);
+}
+.scale .box.y:hover {
+  transform: scaleY(2);
+}
+.scale .box.xy:hover {
+  transform: scale(2);
+}
+.rotate .box.x:hover {
+  transform: rotateX(45deg);
+}
+
+.rotate .box.y:hover {
+  transform: rotateY(45deg);
+  transform-origin: left;
+}
+
+.rotate .box.z:hover {
+  transform: rotateZ(45deg);
+}
+.skew .box.x:hover {
+  transform: skewX(45deg);
+}
+
+.skew .box.y:hover {
+  transform: skewY(45deg);
+  transform-origin: left;
+}

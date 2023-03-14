@@ -2,26 +2,26 @@
   color: red;
 }
 /* 하위(후손)요소 선택자(" " => 띄어쓰기) */
-.gnb-list1 li{
+.gnb-list1 li {
   color: red;
 }
-.gnb-list1 li a{
+.gnb-list1 li a {
   color: violet;
 }
 /* 자식요소 선택자(">") */
 .gnb-list2 > li {
   color: blue;
 }
-.gnb-list2 > li > a{
+.gnb-list2 > li > a {
   color: green;
   font-weight: 700;
 }
 /* 인접형제요소 선택자("+") */
-.target1 + li > a { 
+.target1 + li > a {
   color: gold;
 }
 /* 형제요소 선택자 ("~") */
-.target2 ~ li > a { 
+.target2 ~ li > a {
   color: sienna;
 }
 /* 속성선택자 ("[속성이름] or [속성이름=속성값]") */
@@ -48,13 +48,16 @@ input[type="email"] {
 .child :last-child {
   background-color: blueviolet;
 }
+.child2:nth-of-type(3) {
+  background-color: brown;
+}
 
 /* 가상요소 선택자 */
-.fruits li{
+.fruits li {
   list-style: none;
   padding-left: 0;
 }
-.fruits li::before{
+.fruits li::before {
   content: "";
   display: inline-block;
   text-align: center;
@@ -66,7 +69,7 @@ input[type="email"] {
   border-radius: 50%;
   margin-right: 10px;
 }
-.fruits li::after{
+.fruits li::after {
   content: "new";
   display: inline-block;
   text-align: center;
