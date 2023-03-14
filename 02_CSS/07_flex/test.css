@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#gnblist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#gnb li {
+  text-align: center;
+}
+#gnb li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  width: 100px;
+}
+#gnb li a:hover {
+  background-color: #333;
+  color: #fff;
+}
+#imglist {
+  padding: 50px 0;
+  background-color: aquamarine;
+}
+#imglist ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#imglist ul li {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+#imglist ul li:hover {
+  background-size: auto 120%;
+  transition: background-size 0.4s;
+}
+
+#imglist ul li + li {
+  margin-left: 10px;
+}
+#imglist ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 150px;
+  color: #fff;
+  font-weight: 700;
+
+  border: 3px solid black;
+}
+
+#imglist ul li:nth-child(1) {
+  background-image: url("../assets/dog1.jfif");
+}
+#imglist ul li:nth-child(2) {
+  background-image: url("../assets/dog2.jfif");
+}
+#imglist ul li:nth-child(3) {
+  background-image: url("../assets/dog3.jfif");
+}
