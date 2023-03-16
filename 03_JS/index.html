@@ -27,6 +27,21 @@
     </p>
     <script src="./index.js"></script>
 
+    <script>
+      var currentYear = 2023;
+      var birthYear;
+      var age;
+
+      //  숫자 + 문자열? => 연결연산자
+      //  숫자 - 문자열 => 문자열을 숫자로 변환해서 산술.
+      birthYear = prompt("태어난 연도를 입력하세요. (YYYY)", "");
+      age = currentYear - birthYear + 1; //birthyear은 문자열이지만 js가 자동으로 형변환 한다.
+      document.write(currentYear + "년 현제<br>");
+      document.write(
+        birthYear + "년에 태어난 사람의 나이는" + age + "세입니다."
+      );
+    </script>
+
     <!-- <h1>재사용성이 떨어져서 이 방법은 사용을 잘 안함!</h1>
     <script>
       console.log("Hello World!!");
