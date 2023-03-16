@@ -71,3 +71,14 @@ var user_age;
 // 모든 단어의 시작부분이 대문자로 작성이 된다. 파스칼 케이스(pascal case)
 // 파스칼 케이스는 생성자의 식별자로 사용하고, 리엑트에서 밥 먹듯이 사용한다.
 var UserAge;
+
+// 변수를 이용하여 서로 값을 바꾸자
+
+var num01 = 10;
+var num02 = 20;
+
+num01 = num02;
+console.log(num01);
+
+num02 = num02 - 10;
+console.log(num02);
