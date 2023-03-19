@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS grid layout</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container{
+      width: 100vw;
+      height: 100vh;
+      border: 3px solid black;
+
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 100px 1fr 100px;
+
+       /* 쉽게 하는 방법 
+       직관적으로 판단 가능*/
+
+       grid-template-areas:
+       "header header"
+       "sidebar main"
+       "footer footer";
+    }
+    .header{
+      background-color: antiquewhite;
+      grid-area: header;
+    }
+    .sidebar{
+      background-color: beige;
+      grid-area: sidebar;
+    }
+    .main{
+      grid-area: main;
+    }
+    .footer{
+      background-color: blanchedalmond;
+      grid-area: footer;
+    }
+
+    /* .header{
+      background-color: bisque;
+
+      grid-column: 1/-1;
+    }
+
+    .sidebar{
+      background-color: aqua;
+    }
+    .main{
+      background-color: blue;
+    }
+    .footer{
+      background-color: brown;
+
+      grid-column: 1/-1;
+    } */
+
+   
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>헤더 영역</h2>
+    </div>
+    <div class="sidebar">
+      <h2>사이드 바 영역</h2>
+    </div>
+    <div class="main">
+      <h2>매인 영역</h2>
+    </div>
+    <div class="footer">
+      <h2>푸터 영역</h2>
+    </div>
+  </div>
+  
+</body>
+</html>
