@@ -36,6 +36,12 @@
 
     <div class="box" id="box"></div>
     <div class="box"></div>
+    <h1>test</h1>
+
+    <div class="boxColro"></div>
+    <button>red 색상변경</button>
+    <button>yellow 색상변경</button>
+    <button>blue 색상변경</button>
 
     <script>
       let box = document.getElementById("box");
@@ -55,11 +61,20 @@
         alert("클릭");
       });
 
+      // 메서드 체이닝
       document
         .querySelector(".box:nth-of-type(2)")
         .addEventListener("click", function () {
           alert("클릭2");
         });
+
+      // JS를 통해 CSS변경 => 요소 스타일 적용
+      //  요소.style = "속성 = 값; 속성 = 값; ..."
+      //  요소.style.세부속성 = 값; (카멜케이스 적용, 숫자가 아닌값은 문자열 사용)
+      // 우선순의 문제가 생김
+      box.style = "background-color : yellow";
+      box.style.backgroundColor = "red";
+      box.style.width = "200px";
     </script>
   </body>
 </html>
