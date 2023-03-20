@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM(Document Object Model)</h1>
+    <p>html의 각 요소를 다루기 위해서 브라우저가 제공하는 객체</p>
+
+    <h3>document 객체를 통해서 요소를 가져올 수 있다</h3>
+    <p>getElementById("id값") : 특정 아이디 값을 가지는 요소 1개를 반환한다.</p>
+    <p>
+      getElementsByClassName("class값") : 특정 클래스를 가지는 요소를 여러개를
+      반환한다. <br />
+      => html collection이라는 유사배열 형태로 반환한다.
+    </p>
+    <p>
+      querySelector("CSS 선택자") : 선택자에 해당하는 문서상 첫번째 요소를
+      반환한다.
+    </p>
+    <p>
+      querySelectorAll("CSS 선택자") : 선택자에 해당하는 모든 요소를 반환한다.
+      <br />
+      => NodeList라는 유사배열 형태로 반환한다.
+    </p>
+
+    <div class="box" id="box"></div>
+    <div class="box"></div>
+
+    <script>
+      let box = document.getElementById("box");
+      console.log('getElementById("box") :', box);
+
+      let boxList = document.getElementsByClassName("box");
+      console.log("getElementClassName:", boxList);
+
+      let boxQ = document.querySelector(".box");
+      console.log("querySelector:", boxQ);
+
+      let boxQList = document.querySelectorAll(".box");
+      console.log("querySelectorAll:", boxQList);
+
+      // 두번째 박스 클릭시 얼럿창에 "클릭"이하느 글씨 표기하기
+      boxList[1].addEventListener("click", function () {
+        alert("클릭");
+      });
+
+      document
+        .querySelector(".box:nth-of-type(2)")
+        .addEventListener("click", function () {
+          alert("클릭2");
+        });
+    </script>
+  </body>
+</html>
