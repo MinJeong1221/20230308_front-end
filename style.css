@@ -17,8 +17,14 @@ a {
   clear: both;
 }
 .header {
+  height: 50px;
   display: flex;
-  align-items: start;
+  justify-content: center;
+  align-items: flex-start;
+}
+.logo {
+  position: absolute;
+  left: 20px;
 }
 .gnbList {
   text-align: center;
@@ -32,6 +38,7 @@ a {
   text-align: center;
 }
 .gnbList li a {
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
