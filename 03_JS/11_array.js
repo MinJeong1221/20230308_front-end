@@ -20,11 +20,14 @@
     - 요소의 존재 유무를 확인 
       => .includes(찾는 값);
       => 요소의 유무에 따라 true false를 반환
-  
 
 */
 
 let dataList = [1, "red", {}];
+
+let arr = new Array(10); //비어있는 배열
+arr.push(1);
+console.log(arr, arr.length);
 
 console.log(dataList.length); //배열의 크기
 
