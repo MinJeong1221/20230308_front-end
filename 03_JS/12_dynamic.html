@@ -25,14 +25,42 @@
         height: 100px;
         background-color: red;
       }
+      .todoList {
+        border: 3px solid black;
+        padding: 20px 0;
+        list-style: none;
+      }
+      .todoList li {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+
+        cursor: pointer;
+        user-select: none;
+      }
+      .todoList .active {
+        font-weight: 700;
+        text-decoration: line-through;
+        color: #bbb;
+      }
     </style>
   </head>
   <body>
     <h1>동적 사이트</h1>
 
+    <h2>박스 생성</h2>
+
     <button class="btnCreate">박스 생성!</button>
     <div class="container">
       <div class="box">박스</div>
+    </div>
+
+    <h2>할일등록</h2>
+    <div>
+      <input type="text" class="inputTodo" />
+      <button class="btnSubmit">등록</button>
+      <ul class="todoList">
+        <li>할일</li>
+      </ul>
     </div>
 
     <script>
@@ -69,7 +97,78 @@
         boxEl.appendChild(textNode);
 
         containerEl.appendChild(boxEl);
+
+        //생성된 박스 클릭시 삭제 여부
+        boxEl.addEventListener("click", function () {
+          let ok = confirm("정말 삭제하시겠습니까?");
+
+          if (ok) {
+            // boxEl.remove(); // 메모리에서 아예 삭제
+            let parent = boxEl.parentElement;
+            parent.removeChild(boxEl);
+
+            // DOM 트리에서 부모-자식을 끊기만 한다. 해당 노드를 반환한다.
+            // containerEl.removeChild(boxEl);
+          }
+        });
       }
+
+      let inputTodo = document.querySelector(".inputTodo");
+      let btnSubmit = document.querySelector(".btnSubmit");
+      let todoList = document.querySelector(".todoList");
+
+      btnSubmit.addEventListener("click", creatTodo);
+
+      function creatTodo() {
+        //값이 비어있으면 등록이 안되게
+        if (inputTodo.value === "") {
+          alert("할 일을 입력해 주세요");
+          return; //input이 비어있다면 함수 종료
+        }
+
+        // console.log(inputTodo.value);
+        console.log(todoList.innerText); // 요소안에 있는 텍스트 노드를 읽는다.
+
+        // 텍스트 노드의 값을 변경한다. 추가X
+        // todoList.innerText = inputTodo.value;
+        // 기존의 자식노드를 지우고, 텍스트 노드의 값을 추가한다.
+        // todoList.innerText = `<li>${inputTodo.value}</li>`;
+
+        // 자식으로 포함되어 잇는 노들의 요소 노드까지 포함해서 문자열로 파싱한다.
+        console.log(todoList.innerHTML);
+        // 문자열을 HTML요소로 파싱해서 값을 변경한다.
+        // todoList.innerHTML = `<li>${inputTodo.value}</li>`;
+
+        // todoList.innerHTML = todoList.innerHTML + `<li>${inputTodo.value}</li>`;
+        todoList.innerHTML += `<li>
+          ${inputTodo.value}
+          <button class="btnDel">삭제</button>
+          </li>`;
+
+        // 등록이 끝난 후
+        inputTodo.value = "";
+        inputTodo.focus();
+      }
+
+      /*
+        이벤트위임
+          - 이벤트가 상위요소로 전파되는 점을 이용해서 상위 요소에서 한번에 처리할 수
+      */
+
+      todoList.addEventListener("click", function (e) {
+        console.log("e.target :", e.target);
+        console.log("e.currentTargett :", e.currentTarget);
+
+        if (e.target.matches(".todoList li")) {
+          // 글씨 생상 취소선 굵게
+          e.target.classList.toggle("active");
+        } else if (e.target.matches(".todoList li .btnDel")) {
+          let ok = confirm("정말 삭제하겠습니까?");
+          if (ok) {
+            e.target.parentElement.remove("li");
+          }
+        }
+      });
     </script>
   </body>
 </html>
