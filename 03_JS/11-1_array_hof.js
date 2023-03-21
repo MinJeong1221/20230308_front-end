@@ -193,4 +193,34 @@ arr.forEach((item) => console.log(item));
       => 깊은 복사 : 프로퍼티가 객체인 경우 값 복사가 일어나게 재귀적으로 복사가 일어난다.
 */
 
-let;
+let num = 1;
+let copyNum = num;
+copyNum = 2;
+console.log("num : ", num);
+console.log("copy : ", copyNum);
+
+let list = [1, 2, 3];
+let copyList = list;
+copyList.push(4);
+
+console.log("list : ", list);
+console.log("copyList : ", copyList);
+console.log("list === copyList", list === copyList); // 주소 복사가 일어나기 때문에 둘은 같다.
+
+let copyList02 = list.slice(); // 처음부터 끝까지 복사.
+console.log(copyList02);
+console.log("list === copyList02", list === copyList02);
+
+//
+
+let obj = {
+  name: {
+    last: "Seok",
+    first: "Hwangbo",
+  },
+};
+
+let copyObj = Object.assign({}, obj);
+console.log(obj, copyObj);
+console.log(obj === copyObj);
+console.log(obj.name === copyObj.name);
