@@ -49,3 +49,31 @@ a {
   background-color: #333;
   color: #fff;
 }
+
+.mainImg {
+  height: 500px;
+  background-color: #333;
+}
+
+.mainCard {
+  text-align: center;
+}
+.mainCard ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCard li {
+  width: 200px;
+  height: 300px;
+
+  overflow: hidden;
+  text-align: center;
+}
+.mainCard li img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
