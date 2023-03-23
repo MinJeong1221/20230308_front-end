@@ -21,7 +21,7 @@
       let prevList = [];
       btnSubmit.addEventListener("click", render);
 
-      inputWord.addEventListener("keyup", (e) => {
+      inputWord.addEventListener("keypress", (e) => {
         if (e.code === "Enter") render();
       });
 
