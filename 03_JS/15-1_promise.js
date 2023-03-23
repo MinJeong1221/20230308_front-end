@@ -53,13 +53,11 @@ promise
 
 // 인자로 전달받은 제목의 영화가 있으면 resolve, 없으면 "찾는 영화가 없습니다." 에러 발생
 //      => 3초 뒤에
-function getData() {
-  let promise = new Promise((resolve, reject) => {
+function getData(title) {
+  return new Promise((resolve, reject) => {
     // 서버에서 받아오는 시간 3초 가정.
     // movies 배열에서 제목이 스즈메의 문단속인 객체 찾기.
-    let data = movies.find((movie) => {
-      return movie.title === "슬램덩크";
-    });
+    let data = movies.find((movie) => movie.title === title);
 
     setTimeout(() => {
       if (!data) {
@@ -68,8 +66,37 @@ function getData() {
       resolve(data);
     }, 3000);
   });
-
-  return new Promise();
 }
 
-getData().then();
+getData("슬램덩크")
+  .then((val) => {
+    console.log(val);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+/*
+    async/await
+      - 함수앞에다가 async를 붙이면 비동기 처리 함수가 된다.
+        => 비동기 코드를 동기 코드처럼 작성할 수 있게 도와준다.
+      - 프로미스 앞에 await을 붙이면 resolve될 때까지 기다린 후 다음 코드를 실행한다.
+      - try/catch문을 통해서 에러 처리를 할 수 있다.
+      - 
+
+  */
+
+async function rander(title) {
+  try {
+    let data = await getData(title);
+    console.log("화면에 출력:", data);
+
+    return data.title;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+// async 함수의 return값은 Promise가 된다.
+
+rander("스즈메의 문단속").then((title) => title);
