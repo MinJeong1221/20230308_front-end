@@ -84,44 +84,30 @@ a {
   width: 100%;
   flex-shrink: 0; /* 공간이 부족해 줄어들지 않게 */
 
-  font-size: 4rem;
-  color: #000;
-}
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
 
+  letter-spacing: -0.5px;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
 .slideItem:nth-child(1) {
-  background-color: #bbb;
+  flex-shrink: 0;
+  background-image: url("../asset/slider.png");
 }
 
 .slideItem:nth-child(2) {
-  background-color: #ccc;
+  background-image: url("../asset/slider2.png");
 }
 .slideItem:nth-child(3) {
-  background-color: #eeeeee;
+  background-image: url("../asset/slider3.png");
 }
-
-/* .btnSlide {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  font-size: 3rem;
-  color: #fff;
-
-  cursor: pointer;
-  position: absolute;
-
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.btnSlide.prev {
-  left: 20px;
-}
-
-.btnSlide.next {
-  right: 20px;
-} */
 
 .btns {
   position: absolute;
@@ -172,18 +158,69 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 250px;
   height: 300px;
   color: #fff;
+  font-family: "Inter";
+  font-style: normal;
   font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.5px;
 }
 
 #imglist ul li:nth-child(1) {
-  background-image: url("./dog1.jfif");
+  background-image: url("../asset/boy.png");
 }
 #imglist ul li:nth-child(2) {
-  background-image: url("./dog1.jfif");
+  background-image: url("../asset/boy3.jfif");
 }
 #imglist ul li:nth-child(3) {
-  background-image: url("./dog1.jfif");
+  background-image: url("../asset/boy2.png");
+}
+.about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  height: 560px;
+
+  background: #f0f0f0;
+}
+.about h2 {
+  position: absolute;
+  top: 105px;
+  text-align: center;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  letter-spacing: -0.5px;
+
+  color: #000000;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  background-color: #3d3d3d;
+}
+footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Inter";
+  font-style: normal;
+
+  color: #fff;
+  font-size: 16px;
 }
