@@ -1,4 +1,4 @@
-let btnList = document.querySelectorAll(".btns button");
+let btnList = document.querySelectorAll(".btnGroup button");
 let slideList = document.querySelector(".slideList");
 let btnSlideList = document.querySelectorAll(".btnSlide");
 
