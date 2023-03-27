@@ -24,5 +24,5 @@ export default function Gallery() {
     => 해당 요소들이 화면에 출력된다.
   - 복잡한 구조의 UI를 만들면 재사용성이 증가한다.
   - 하나의 파일의 여러개의 컴포넌트를 작성할수 있다.
-    => 위의 예제에서 Gallery를 부모 컴포넌트, Profile을 자식컴포넌트
+    => 위의 예제에서 Gallery를 부모 컴포넌트, Profile을 자식 컴포넌트
 */
