@@ -7,7 +7,12 @@ export default function Pointer() {
   console.log(position);
   const handlePosition = (e) => {
     // console.log(position);
-    setPosition({ ...position, x: e.clientX, y: e.clientY });
+
+    const handlePosition = (e) => {
+      // console.log(position);
+      const copy = { ...position };
+      copy.x = setPosition({ ...position, x: e.clientX, y: e.clientY });
+    };
   };
   return (
     <div
