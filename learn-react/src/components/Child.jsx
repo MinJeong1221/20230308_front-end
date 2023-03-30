@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from "react";
-import { HandleContext } from "./GrandParent";
+import { HandleCountContext } from "./GrandParent";
 
 function Child() {
-  const handleCount = useContext(HandleContext);
+  const handleCount = useContext(HandleCountContext);
 
   useEffect(() => {
     console.log("Child Component render!");
   });
+
   return (
     <div
       style={{

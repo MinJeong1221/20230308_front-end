@@ -1,5 +1,6 @@
 // src/Avatar.jsx
 import { getImageUrl } from "./utils.js";
+
 export default function Avatar({ person, size }) {
   return (
     <img
