@@ -1,4 +1,9 @@
-function Child({ count, handleCount }) {
+import { useContext } from "react";
+import { CountContext, HandleContext } from "./GrandParent";
+
+function Child() {
+  const count = useContext(CountContext);
+  const handleCount = useContext(HandleContext);
   return (
     <div
       style={{
