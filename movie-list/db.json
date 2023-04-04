@@ -1,14 +1,14 @@
 {
-  "todos": [
+  "post": [
     {
-      "text": "ㅇㄹㅇㄹㅇㄹㅇㄹ",
-      "done": false,
-      "id": 1
+      "id": 1,
+      "title": "react-router-dom",
+      "body": "react-router-dom 어려워요~~"
     },
     {
-      "text": "ㅇㄹㅇㄹㅇㄹㅇㄹ",
-      "done": false,
-      "id": 2
+      "id": 2,
+      "title": "내일은 휴무이다",
+      "body": "학원 안가도 된다~~~"
     }
   ]
 }
