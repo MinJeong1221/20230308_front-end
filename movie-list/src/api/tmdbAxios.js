@@ -7,3 +7,5 @@ export const tmdbAxios = axios.create({
     api_key: process.env.REACT_APP_TMDB_API_KEY,
   },
 });
+
+console.log(process.env.REACT_APP_TMDB_API_KEY);
