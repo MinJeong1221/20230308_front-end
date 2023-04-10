@@ -4,55 +4,77 @@ import { tmdbAxios } from "../../api/tmdbAxios";
 import Poster from "../common/Poster";
 import styled from "styled-components";
 import qs from "qs";
+import SearchFilter from "../search/SearchFilter";
+
+const initialFilter = [
+    { id: 1, text: "영화", active: true, type: "movie" },
+    { id: 2, text: "TV 프로그램", active: false, type: "tv" },
+    { id: 3, text: "인물", active: false, type: "person" },
+];
 
 function Search() {
-  // 쿼리스트링으로 넘어온 keyword 값 꺼내기
-  const [searchParams] = useSearchParams();
+    // 쿼리스트링으로 넘어온 keyword 값 꺼내기
+    const [searchParams] = useSearchParams();
 
-  const query = searchParams.get("query");
+    const query = searchParams.get("query");
 
-  const [results, setResults] = useState(null);
+    const [results, setResults] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await tmdbAxios.get("search/movie", {
-        params: {
-          query,
-        },
-      });
+    const [filterList, setFilterList] = useState(initialFilter);
 
-      setResults(data.results);
+    const handleFilter = (id) => {
+        setFilterList(
+            filterList.map((filter) =>
+                filter.id === id
+                    ? { ...filter, active: true }
+                    : { ...filter, active: false }
+            )
+        );
     };
 
-    fetchData();
-  }, [query]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const { type } = filterList.find((filter) => filter.active);
 
-  console.log(results);
+            const { data } = await tmdbAxios.get(`search/${type}`, {
+                params: {
+                    query,
+                },
+            });
 
-  if (!results) return <div>로딩 중...</div>;
+            setResults(data.results);
+        };
 
-  return (
-    <div>
-      <PostList>
-        {results.map((item) => (
-          <li key={item.id}>
-            <Poster data={item} />
-          </li>
-        ))}
-      </PostList>
-    </div>
-  );
+        fetchData();
+    }, [query, filterList]);
+
+    // console.log(results);
+
+    if (!results) return <div>로딩 중...</div>;
+
+    return (
+        <div>
+            <SearchFilter filterList={filterList} handleFilter={handleFilter} />
+            <PostList>
+                {results.map((item) => (
+                    <li key={item.id}>
+                        <Poster data={item} />
+                    </li>
+                ))}
+            </PostList>
+        </div>
+    );
 }
 
 const PostList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 
-  gap: 20px;
+    gap: 20px;
 
-  li {
-    width: 154px;
-  }
+    li {
+        width: 154px;
+    }
 `;
 
 export default Search;
