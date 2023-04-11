@@ -51,7 +51,7 @@ const todosSlice = createSlice({
                 state.push(action.payload);
             },
             prepare: (text) => {
-                return { payload: { id: nanoid, text, done: false } };
+                return { payload: { id: nanoid(), text, done: false } };
             },
         },
         removeTodos: (state, action) => {
