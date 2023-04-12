@@ -29,7 +29,17 @@ export const movieApi = createApi({
             query: (page) => `/popular?page=${page}`,
             transformResponse: (res) => res.results,
         }),
+        getTopRated: builder.query({
+            query: (page) => ({
+                url: "/top_rated",
+                params: {
+                    page,
+                    language: "ko-KR",
+                },
+            }),
+            transformResponse: (res) => res.results,
+        }),
     }),
 });
 
-export const { useGetMoviesQuery } = movieApi;
+export const { useGetMoviesQuery, useGetTopRatedQuery } = movieApi;
