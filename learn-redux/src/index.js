@@ -10,7 +10,7 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import counter from "./redux/counter";
 import todosReducer from "./redux/todos";
 import moviesReducer from "./redux/movies";
-import { movieApi } from "./api/movie";
+import { movieApi } from "./api/movies";
 import { getDefaultNormalizer } from "@testing-library/react";
 
 // const store = createStore(counter);
@@ -22,8 +22,8 @@ const store = configureStore({
         movies: moviesReducer,
         [movieApi.reducerPath]: movieApi.reducer,
     },
-    // middleware: (getDefaultMiddleware)=>
-    // getDefaultMiddleware().concat(movieApi,),
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(movieApi.middleware),
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

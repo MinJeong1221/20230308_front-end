@@ -1,6 +1,6 @@
 //비동기 처리를 도와주는 미들웨어 => 함수를 액션으로 사용할 수 있게 해준다
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getMovies } from "../api/movie";
+import { getMovies } from "../api/movies";
 
 export const fetchMovies = createAsyncThunk("movies/fetchMovies", getMovies);
 
