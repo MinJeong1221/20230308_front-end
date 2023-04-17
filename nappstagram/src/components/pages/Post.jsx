@@ -1,9 +1,11 @@
-import React from 'react'
+import { Outlet } from "react-router-dom";
 
 function Post() {
   return (
-    <h1>Post</h1>
-  )
+    <div>
+      <Outlet />
+    </div>
+  );
 }
 
 export default Post;

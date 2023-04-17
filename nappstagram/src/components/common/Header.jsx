@@ -10,8 +10,8 @@ function Header() {
       <input type="text" />
       <HeaderButtons>
         <button type='button' onClick={(e)=> navigate("/")}>Home</button>
-        <button type='button' onClick={(e)=> navigate("/post")}>Post</button>
-        <button type='button' onClick={(e)=> navigate("/profil")}>Profil</button>
+        <button type='button' onClick={(e)=> navigate("/posts")}>Post</button>
+        <button type='button' onClick={(e)=> navigate("/profile")}>Profil</button>
       </HeaderButtons>
     </Headers>
   )
