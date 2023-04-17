@@ -1,50 +1,58 @@
-import React from 'react'
-import { useNavigate, Link } from 'react-router-dom';
-import styled from 'styled-components'
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+import { AiOutlineHome, AiOutlinePicture, AiOutlineUser } from "react-icons/ai";
+import SearchBar from "./SearchBar";
 
 function Header() {
-  const navigate = useNavigate();
   return (
-    <Headers>
-      <h1><Link to="/">Neppstagram</Link></h1>
-      <input type="text" />
-      <HeaderButtons>
-        <button type='button' onClick={(e)=> navigate("/")}>Home</button>
-        <button type='button' onClick={(e)=> navigate("/posts")}>Post</button>
-        <button type='button' onClick={(e)=> navigate("/profile")}>Profil</button>
-      </HeaderButtons>
-    </Headers>
-  )
+    <Cotainer>
+      <Wrapper>
+        <h1>
+          <Link to="/">Neppstagram</Link>
+        </h1>
+        <SearchBar />
+        <NavList>
+          <NavItem>
+            <Link to="/">
+              <AiOutlineHome size={20} color="#777" />
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/posts">
+              <AiOutlinePicture size={20} color="#777" />
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/profile">
+              <AiOutlineUser size={20} color="#777" />
+            </Link>
+          </NavItem>
+        </NavList>
+      </Wrapper>
+    </Cotainer>
+  );
 }
-const Headers = styled.div`
-  display: flex;
-  height: 80px;
-  background-color: beige;
-  justify-content: center;
-  align-items: center;
-  h1{
-    position: absolute;
-    left: 20px;
-    top: 15px;
-  }
 
-`
-const HeaderButtons = styled.div`
+const Cotainer = styled.header`
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+`;
+
+const NavList = styled.ul`
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 20px;
   gap: 20px;
+`;
 
-  button{
-    height: 50px;
-    width: 50px;
-    font-weight: 700;
-    color: white;
-    background-color: black;
-    border-radius: 50%;
-  }
-`
+const NavItem = styled.li``;
 
-export default Header
+export default Header;
